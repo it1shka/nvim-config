@@ -7,7 +7,8 @@ function configure_plugins()
   Plug 'nvim-lua/plenary.nvim'
   Plug 'scalameta/nvim-metals'
   Plug 'preservim/nerdtree'
-  -- Plug 'neoclide/vim-jsx-improve'
+  Plug 'neoclide/vim-jsx-improve'
+  Plug 'sbdchd/neoformat'
   -- Color themes:
   Plug 'ellisonleao/gruvbox.nvim'
   Plug 'joshdick/onedark.vim'
