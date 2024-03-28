@@ -9,6 +9,8 @@ function configure_plugins()
   Plug 'preservim/nerdtree'
   Plug 'neoclide/vim-jsx-improve'
   Plug 'sbdchd/neoformat'
+  Plug 'leafgarland/typescript-vim'
+  Plug 'peitalin/vim-jsx-typescript'
   -- Color themes:
   Plug 'ellisonleao/gruvbox.nvim'
   Plug 'joshdick/onedark.vim'
