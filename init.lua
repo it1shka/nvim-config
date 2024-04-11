@@ -11,9 +11,12 @@ function configure_plugins()
   Plug 'sbdchd/neoformat'
   Plug 'leafgarland/typescript-vim'
   Plug 'peitalin/vim-jsx-typescript'
+
   -- Color themes:
   Plug 'ellisonleao/gruvbox.nvim'
   Plug 'joshdick/onedark.vim'
+  Plug 'EdenEast/nightfox.nvim'
+
   vim.call('plug#end')
 end
 
@@ -54,8 +57,9 @@ end
 
 function configure_colorscheme()
   -- vim.cmd "colorscheme pablo" 
-  vim.cmd "colorscheme gruvbox"
+  -- vim.cmd "colorscheme gruvbox"
   -- vim.cmd "colorscheme onedark"
+  vim.cmd "colorscheme terafox"
 end
 
 function configure_key_mappings()
