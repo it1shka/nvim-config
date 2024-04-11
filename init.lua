@@ -12,6 +12,10 @@ function configure_plugins()
   Plug 'leafgarland/typescript-vim'
   Plug 'peitalin/vim-jsx-typescript'
 
+  -- Support for SQL
+  Plug 'tpope/vim-dadbod'
+  vim.g.db = 'postgresql:postgres'
+  
   -- Color themes:
   Plug 'ellisonleao/gruvbox.nvim'
   Plug 'joshdick/onedark.vim'
