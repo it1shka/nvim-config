@@ -3,5 +3,11 @@
   "tsserver.inlayHint.enable": true,
   "tsserver.typescript.inlayHints": true,
   "tsserver.javascript.inlayHints": true,
-  "clangd.inlayHint.enable": true
+  "clangd.inlayHint.enable": true,
+  "languageserver": {
+    "erlang": {
+      "command": "erlang_ls",
+      "filetypes": ["erlang"]
+    }
+  }
 }
