@@ -21,6 +21,18 @@ function configure_plugins()
   Plug 'joshdick/onedark.vim'
   Plug 'EdenEast/nightfox.nvim'
 
+  -- Lean support
+  Plug 'Julian/lean.nvim'
+  Plug 'neovim/nvim-lspconfig'
+  Plug 'nvim-lua/plenary.nvim'
+  Plug 'hrsh7th/nvim-cmp'
+  Plug 'hrsh7th/cmp-nvim-lsp'
+  Plug 'hrsh7th/cmp-buffer'
+  Plug 'hrsh7th/vim-vsnip'
+  Plug 'andrewradev/switch.vim'
+  Plug 'tomtom/tcomment_vim'
+  Plug 'nvim-telescope/telescope.nvim'
+
   vim.call('plug#end')
 end
 
@@ -83,6 +95,13 @@ function configure_key_mappings()
   map('n', '<C-l>', ':nohlsearch<CR>', { desc = 'Clears built-in text search highlighting' })
 end
 
+function setup_lean()
+  require('lean').setup{
+    lsp = { on_attach = on_attach },
+    mappings = true,
+  }
+end
+
 function setup_editor()
   configure_tabs()
   configure_line_numbers()
@@ -91,6 +110,7 @@ function setup_editor()
   configure_metals_for_scala()
   configure_colorscheme()
   configure_key_mappings()
+  setup_lean()
   vim.o.scrolloff = 10
   vim.o.smartindent = true
   -- configure_tabs()
