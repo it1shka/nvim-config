@@ -72,10 +72,7 @@ function configure_suggestions()
 end
 
 function configure_colorscheme()
-  -- vim.cmd "colorscheme pablo" 
-  -- vim.cmd "colorscheme gruvbox"
-  -- vim.cmd "colorscheme onedark"
-  vim.cmd "colorscheme terafox"
+  vim.cmd "colorscheme duskfox"
 end
 
 function configure_key_mappings()
@@ -97,9 +94,20 @@ end
 
 function setup_lean()
   require('lean').setup{
-    lsp = { on_attach = on_attach },
+    -- TODO: finish setup with instructions here: https://github.com/Julian/lean.nvim
+    lsp = {},
+    -- lsp = { on_attach = on_attach },
     mappings = true,
   }
+end
+
+function setup_telescope()
+  -- got from https://github.com/nvim-telescope/telescope.nvim
+  local builtin = require('telescope.builtin')
+  vim.keymap.set('n', '<leader>ff', builtin.find_files, {})
+  vim.keymap.set('n', '<leader>fg', builtin.live_grep, {})
+  vim.keymap.set('n', '<leader>fb', builtin.buffers, {})
+  vim.keymap.set('n', '<leader>fh', builtin.help_tags, {})
 end
 
 function setup_editor()
@@ -111,6 +119,7 @@ function setup_editor()
   configure_colorscheme()
   configure_key_mappings()
   setup_lean()
+  setup_telescope()
   vim.o.scrolloff = 10
   vim.o.smartindent = true
   -- configure_tabs()
