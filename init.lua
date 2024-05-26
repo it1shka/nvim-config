@@ -11,6 +11,7 @@ function configure_plugins()
   Plug 'sbdchd/neoformat'
   Plug 'leafgarland/typescript-vim'
   Plug 'peitalin/vim-jsx-typescript'
+  Plug 'nvim-telescope/telescope.nvim'
 
   -- Support for SQL
   Plug 'tpope/vim-dadbod'
@@ -20,8 +21,10 @@ function configure_plugins()
   Plug 'ellisonleao/gruvbox.nvim'
   Plug 'joshdick/onedark.vim'
   Plug 'EdenEast/nightfox.nvim'
+  Plug 'diegoulloao/neofusion.nvim'
 
   -- Lean support
+  --[[
   Plug 'Julian/lean.nvim'
   Plug 'neovim/nvim-lspconfig'
   Plug 'nvim-lua/plenary.nvim'
@@ -31,7 +34,11 @@ function configure_plugins()
   Plug 'hrsh7th/vim-vsnip'
   Plug 'andrewradev/switch.vim'
   Plug 'tomtom/tcomment_vim'
-  Plug 'nvim-telescope/telescope.nvim'
+  --]]
+  -- Plug 'nvim-telescope/telescope.nvim'
+
+  -- LaTeX support
+  -- Plug 'lervag/vimtex'
 
   vim.call('plug#end')
 end
@@ -92,6 +99,7 @@ function configure_key_mappings()
   map('n', '<C-l>', ':nohlsearch<CR>', { desc = 'Clears built-in text search highlighting' })
 end
 
+--[[
 function setup_lean()
   require('lean').setup{
     -- TODO: finish setup with instructions here: https://github.com/Julian/lean.nvim
@@ -100,6 +108,7 @@ function setup_lean()
     mappings = true,
   }
 end
+--]]
 
 function setup_telescope()
   -- got from https://github.com/nvim-telescope/telescope.nvim
@@ -110,6 +119,15 @@ function setup_telescope()
   vim.keymap.set('n', '<leader>fh', builtin.help_tags, {})
 end
 
+--[[
+function setup_latex()
+  vim.cmd('filetype plugin indent on')
+  vim.cmd('syntax enable')
+  vim.g.vimtex_view_method = 'zathura'
+  -- vim.g.vimtex_compiler_method = 'latexrun'
+end
+--]]
+
 function setup_editor()
   configure_tabs()
   configure_line_numbers()
@@ -118,8 +136,9 @@ function setup_editor()
   configure_metals_for_scala()
   configure_colorscheme()
   configure_key_mappings()
-  setup_lean()
+  -- setup_lean()
   setup_telescope()
+  -- setup_latex()
   vim.o.scrolloff = 10
   vim.o.smartindent = true
   -- configure_tabs()
