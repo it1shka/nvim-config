@@ -40,6 +40,9 @@ function configure_plugins()
   -- LaTeX support
   -- Plug 'lervag/vimtex'
 
+  -- Zig support
+  Plug 'ziglang/zig.vim'
+
   vim.call('plug#end')
 end
 

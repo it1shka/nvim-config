@@ -9,5 +9,10 @@
       "command": "erlang_ls",
       "filetypes": ["erlang"]
     }
-  }
+  },
+
+  "zig.enabled": true,
+  "zig.startUpMessage": true,
+  "zig.path": "zls",
+  "zig.debugLog": false,
 }
