@@ -131,8 +131,12 @@ function setup_latex()
 end
 --]]
 
+function setup_zig()
+  vim.g.zig_fmt_autosave = 0
+end
+
 function setup_editor()
-  configure_tabs()
+  -- configure_tabs()
   configure_line_numbers()
   configure_suggestions()
   configure_plugins()
@@ -144,7 +148,8 @@ function setup_editor()
   -- setup_latex()
   vim.o.scrolloff = 10
   vim.o.smartindent = true
-  -- configure_tabs()
+  setup_zig()
+  configure_tabs()
   print('Welcome again, Tikhon')
 end
 
