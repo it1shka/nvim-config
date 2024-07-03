@@ -22,23 +22,8 @@ function configure_plugins()
   Plug 'joshdick/onedark.vim'
   Plug 'EdenEast/nightfox.nvim'
   Plug 'diegoulloao/neofusion.nvim'
-
-  -- Lean support
-  --[[
-  Plug 'Julian/lean.nvim'
-  Plug 'neovim/nvim-lspconfig'
-  Plug 'nvim-lua/plenary.nvim'
-  Plug 'hrsh7th/nvim-cmp'
-  Plug 'hrsh7th/cmp-nvim-lsp'
-  Plug 'hrsh7th/cmp-buffer'
-  Plug 'hrsh7th/vim-vsnip'
-  Plug 'andrewradev/switch.vim'
-  Plug 'tomtom/tcomment_vim'
-  --]]
-  -- Plug 'nvim-telescope/telescope.nvim'
-
-  -- LaTeX support
-  -- Plug 'lervag/vimtex'
+  Plug 'scottmckendry/cyberdream.nvim'
+  Plug 'projekt0n/github-nvim-theme'
 
   -- Zig support
   Plug 'ziglang/zig.vim'
@@ -102,17 +87,6 @@ function configure_key_mappings()
   map('n', '<C-l>', ':nohlsearch<CR>', { desc = 'Clears built-in text search highlighting' })
 end
 
---[[
-function setup_lean()
-  require('lean').setup{
-    -- TODO: finish setup with instructions here: https://github.com/Julian/lean.nvim
-    lsp = {},
-    -- lsp = { on_attach = on_attach },
-    mappings = true,
-  }
-end
---]]
-
 function setup_telescope()
   -- got from https://github.com/nvim-telescope/telescope.nvim
   local builtin = require('telescope.builtin')
@@ -122,30 +96,18 @@ function setup_telescope()
   vim.keymap.set('n', '<leader>fh', builtin.help_tags, {})
 end
 
---[[
-function setup_latex()
-  vim.cmd('filetype plugin indent on')
-  vim.cmd('syntax enable')
-  vim.g.vimtex_view_method = 'zathura'
-  -- vim.g.vimtex_compiler_method = 'latexrun'
-end
---]]
-
 function setup_zig()
   vim.g.zig_fmt_autosave = 0
 end
 
 function setup_editor()
-  -- configure_tabs()
   configure_line_numbers()
   configure_suggestions()
   configure_plugins()
   configure_metals_for_scala()
   configure_colorscheme()
   configure_key_mappings()
-  -- setup_lean()
   setup_telescope()
-  -- setup_latex()
   vim.o.scrolloff = 10
   vim.o.smartindent = true
   setup_zig()
