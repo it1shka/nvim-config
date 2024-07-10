@@ -13,6 +13,9 @@ function configure_plugins()
   Plug 'peitalin/vim-jsx-typescript'
   Plug 'nvim-telescope/telescope.nvim'
 
+  -- For JSDoc
+  Plug 'heavenshell/vim-jsdoc'
+
   -- Support for SQL
   Plug 'tpope/vim-dadbod'
   vim.g.db = 'postgresql:postgres'
@@ -67,7 +70,7 @@ function configure_suggestions()
 end
 
 function configure_colorscheme()
-  vim.cmd "colorscheme duskfox"
+  vim.cmd "colorscheme github_dark"
 end
 
 function configure_key_mappings()
