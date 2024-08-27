@@ -16,6 +16,10 @@ function configure_plugins()
   -- For JSDoc
   Plug 'heavenshell/vim-jsdoc'
 
+  -- Support fot pascal
+  Plug 'vim-scripts/fpc.vim'
+  vim.g.pascal_fpc = true
+
   -- Support for SQL
   Plug 'tpope/vim-dadbod'
   vim.g.db = 'postgresql:postgres'
