@@ -1,4 +1,4 @@
-function configure_plugins() 
+local function configure_plugins() 
   local Plug = vim.fn['plug#']
   vim.call('plug#begin', '~/.config/nvim/plugged')
   Plug 'airblade/vim-gitgutter'
@@ -23,7 +23,7 @@ function configure_plugins()
   -- Support for SQL
   Plug 'tpope/vim-dadbod'
   vim.g.db = 'postgresql:postgres'
-  
+
   -- Color themes:
   Plug 'ellisonleao/gruvbox.nvim'
   Plug 'joshdick/onedark.vim'
@@ -38,7 +38,7 @@ function configure_plugins()
   vim.call('plug#end')
 end
 
-function configure_metals_for_scala() 
+local function configure_metals_for_scala() 
   local nvim_metals_group = vim.api.nvim_create_augroup("nvim-metals", { clear = true })
   vim.api.nvim_create_autocmd("FileType", {
     pattern = { "scala", "sbt", "java" },
@@ -49,7 +49,7 @@ function configure_metals_for_scala()
   })
 end
 
-function configure_tabs()
+local function configure_tabs()
   local set = vim.opt
   set.tabstop = 2
   set.softtabstop = 2
@@ -58,14 +58,14 @@ function configure_tabs()
   set.autoindent = true
 end
 
-function configure_line_numbers()
+local function configure_line_numbers()
   vim.wo.number = true
   vim.wo.cursorline = true
   vim.wo.cursorlineopt = 'number'
   vim.api.nvim_set_hl(0, 'LineNr', { fg = 'white' })
 end
 
-function configure_suggestions()
+local function configure_suggestions()
   vim.opt.showmatch = true
   vim.opt.ignorecase = true
   vim.opt.hlsearch = true
@@ -73,11 +73,11 @@ function configure_suggestions()
   vim.opt.wildmode = 'longest,list'
 end
 
-function configure_colorscheme()
+local function configure_colorscheme()
   vim.cmd "colorscheme github_dark"
 end
 
-function configure_key_mappings()
+local function configure_key_mappings()
   -- helper function for key mapping in Lua
   local function map(mode, lhs, rhs, opts)
     local options = { noremap = true, silent = true }
@@ -94,7 +94,7 @@ function configure_key_mappings()
   map('n', '<C-l>', ':nohlsearch<CR>', { desc = 'Clears built-in text search highlighting' })
 end
 
-function setup_telescope()
+local function setup_telescope()
   -- got from https://github.com/nvim-telescope/telescope.nvim
   local builtin = require('telescope.builtin')
   vim.keymap.set('n', '<leader>ff', builtin.find_files, {})
@@ -103,11 +103,11 @@ function setup_telescope()
   vim.keymap.set('n', '<leader>fh', builtin.help_tags, {})
 end
 
-function setup_zig()
+local function setup_zig()
   vim.g.zig_fmt_autosave = 0
 end
 
-function setup_editor()
+local function setup_editor()
   configure_line_numbers()
   configure_suggestions()
   configure_plugins()

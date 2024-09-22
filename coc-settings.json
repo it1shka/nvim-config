@@ -4,15 +4,21 @@
   "tsserver.typescript.inlayHints": true,
   "tsserver.javascript.inlayHints": true,
   "clangd.inlayHint.enable": true,
-  "languageserver": {
-    "erlang": {
-      "command": "erlang_ls",
-      "filetypes": ["erlang"]
-    }
-  },
 
   "zig.enabled": true,
   "zig.startUpMessage": true,
   "zig.path": "zls",
-  "zig.debugLog": false
+  "zig.debugLog": false,
+
+  "languageserver": {
+    "erlang": {
+      "command": "erlang_ls",
+      "filetypes": ["erlang"]
+    },
+    "csharp-ls": {
+      "command": "~/.dotnet/tools/csharp-ls",
+      "filetypes": ["cs"],
+      "rootPatterns": ["*.csproj", ".vim/", ".git/", ".hg/"]
+    }
+  }
 }
