@@ -19,6 +19,10 @@
       "command": "~/.dotnet/tools/csharp-ls",
       "filetypes": ["cs"],
       "rootPatterns": ["*.csproj", ".vim/", ".git/", ".hg/"]
+    },
+    "kotlin-language-server": {
+      "command": "kotlin-language-server",
+      "filetypes": ["kotlin"]
     }
   }
 }
