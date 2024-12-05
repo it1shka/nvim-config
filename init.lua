@@ -1,4 +1,4 @@
-local function configure_plugins() 
+local function configure_plugins()
   local Plug = vim.fn['plug#']
   vim.call('plug#begin', '~/.config/nvim/plugged')
   Plug 'airblade/vim-gitgutter'
@@ -38,7 +38,7 @@ local function configure_plugins()
   vim.call('plug#end')
 end
 
-local function configure_metals_for_scala() 
+local function configure_metals_for_scala()
   local nvim_metals_group = vim.api.nvim_create_augroup("nvim-metals", { clear = true })
   vim.api.nvim_create_autocmd("FileType", {
     pattern = { "scala", "sbt", "java" },

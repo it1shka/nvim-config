@@ -31,9 +31,9 @@
         "-cli", "/opt/homebrew/bin/arduino-cli",
         "-clangd", "/usr/bin/clangd",
         "-cli-config", "/Users/tikhon/Library/Arduino15/arduino-cli.yaml",
-        "-fqbn", "arduino:avr:uno"
-      ],
-      "disabledFeatures": ["semanticTokens"]
+        "-fqbn", "arduino:avr:uno",
+        "-log", "/Users/tikhon/logs/arduino.log"
+      ]
     }
   }
 }
