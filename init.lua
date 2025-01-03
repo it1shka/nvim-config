@@ -31,6 +31,9 @@ local function configure_plugins()
   Plug 'diegoulloao/neofusion.nvim'
   Plug 'scottmckendry/cyberdream.nvim'
   Plug 'projekt0n/github-nvim-theme'
+  Plug 'Mofiqul/dracula.nvim'
+  Plug 'briones-gabriel/darcula-solid.nvim'
+  Plug 'rktjmp/lush.nvim'
 
   -- Zig support
   Plug 'ziglang/zig.vim'
@@ -74,7 +77,9 @@ local function configure_suggestions()
 end
 
 local function configure_colorscheme()
-  vim.cmd "colorscheme github_dark"
+  -- vim.cmd "colorscheme dracula"
+  vim.cmd 'colorscheme darcula-solid'
+  vim.cmd 'set termguicolors'
 end
 
 local function configure_key_mappings()

@@ -34,6 +34,14 @@
         "-fqbn", "arduino:avr:uno"
       ],
       "disabledFeatures": ["semanticTokens"]
+    },
+    "ocaml-lsp-server": {
+      "command": "ocamllsp",
+      "filetypes": ["ocaml"]
+    },
+    "golang": {
+      "command": "gopls",
+      "filetypes": ["go"]
     }
   }
 }
