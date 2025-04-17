@@ -1,5 +1,5 @@
 require("config.lazy")
 require("general.cfg-whitespace").setup()
-require("general.cfg-appearance").setup()
 require("general.cfg-keymap").setup()
 require("general.cfg-autocompletion").setup()
+require("general.cfg-appearance").setup()
