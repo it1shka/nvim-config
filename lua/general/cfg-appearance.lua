@@ -13,6 +13,7 @@ end
 
 function appearance.config_color_scheme()
   local onedark = require("onedark")
+  -- options: dark, darker, cool, deep, warm, warmer, light
   onedark.setup { style = "deep" }
   onedark.load()
 end
