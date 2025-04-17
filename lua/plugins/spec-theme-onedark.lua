@@ -1,5 +1,5 @@
 return {
-  "navarasu/onedark.nvim",
-  version = "*",
-  lazy = false,
+	"navarasu/onedark.nvim",
+	version = "*",
+	lazy = false,
 }
