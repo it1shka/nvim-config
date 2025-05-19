@@ -7,7 +7,15 @@ function autocompletion.setup()
 end
 
 function autocompletion.enable_servers()
-	local language_servers = { "ts_ls", "lua_ls", "rust_analyzer", "zls", "svelte" }
+	local language_servers = {
+		"ts_ls",
+		"lua_ls",
+		"rust_analyzer",
+		"zls",
+		"svelte",
+		"cssls",
+		"pyright",
+	}
 	for _, server_name in ipairs(language_servers) do
 		vim.lsp.enable(server_name)
 	end
