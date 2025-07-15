@@ -15,6 +15,7 @@ function autocompletion.enable_servers()
 		"svelte",
 		"cssls",
 		"pyright",
+		"erlangls",
 	}
 	for _, server_name in ipairs(language_servers) do
 		vim.lsp.enable(server_name)
