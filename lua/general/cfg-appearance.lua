@@ -12,10 +12,13 @@ function appearance.config_line_numbers()
 end
 
 function appearance.config_color_scheme()
-	local onedark = require("onedark")
+	-- local onedark = require("onedark")
 	-- options: dark, darker, cool, deep, warm, warmer, light
-	onedark.setup({ style = "deep" })
-	onedark.load()
+	-- onedark.setup({ style = "deep" })
+	-- onedark.load()
+
+	vim.opt.background = "dark" -- set this to dark or light
+	vim.cmd.colorscheme("oxocarbon")
 end
 
 return appearance
