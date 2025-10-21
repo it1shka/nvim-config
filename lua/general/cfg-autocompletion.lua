@@ -18,6 +18,8 @@ function autocompletion.enable_servers()
 		"erlangls",
 		"phpactor",
 		"gopls",
+		"tailwindcss-language-server",
+		"julials",
 	}
 	for _, server_name in ipairs(language_servers) do
 		vim.lsp.enable(server_name)
